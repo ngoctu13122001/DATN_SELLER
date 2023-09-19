@@ -1,0 +1,242 @@
+<!-- Quản lý tour du lịch -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Seller</title>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html" class="logo">
+            <i class='bx bxl-graphql'></i>
+            <div class="logo-name"><span>SEL</span>LER</div>
+        </a>
+        <ul class="side-menu">
+            <li class="active"><a href="index.html" class="title_sidemenu"><i class='bx bxs-dashboard'></i>Trang Chủ</a>
+            </li>
+            <li><a href="tour_manage.html" class="title_sidemenu"><i class='bx bx-map-pin'></i>Quản Lý Tour Du Lịch</a>
+            </li>
+            <li><a href="schedule_manage.html" class="title_sidemenu"><i class='bx bx-location-plus'></i>Quản Lý Lịch Trình</a>
+            </li>
+            <li><a href="request_tour.html" class="title_sidemenu"><i class='bx bx-bell'></i>Yêu Cầu Đặt Tour</a>
+            </li>
+            <li><a href="bill_manage.html" class="title_sidemenu"><i class='bx bx-money'></i>Quản Lý Hóa Đơn</a>
+            </li>
+            <li><a href="chat_box.html" class="title_sidemenu"><i class='bx bx-chat'></i>Chat Box</a>
+            </li>
+            <li><a href="statistical.html" class="title_sidemenu"><i class='bx bx-bar-chart-alt-2'></i>Thống Kê</a></li>
+
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar thanh điều hướng -->
+        <nav>
+            <i class='bx bx-menu'></i>
+
+            <a href="#" class="profile">
+                <img src="images/admin.jpg">
+            </a>
+        </nav>
+
+        <!-- End of Navbar thanh điều hướng -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Quản lý Tour Du Lịch</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Seller
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Quản lý Tour Du Lịch</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Insights -->
+
+            
+            <!-- End of Insights -->
+            <!-- model edit and delete -->
+            <!-- Form Edit -->
+            <div id="editForm" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Sửa Thông Tin</h2>
+                    <form>
+                        Tên danh mục: <input type="text" id="name" placeholder="Tên địa điểm"><br><br>
+                        Nội dung: <textarea id="details" placeholder="Chi tiết"></textarea><br><br>
+                        Giá: <input type="text" id="price" placeholder="VNĐ"><br><br>
+                        Hình ảnh: <input type="file" id="image"><br><br>
+                        <button type="submit" class="btnluu">Lưu</button>
+                        <button type="button" class="close-btn">Thoát</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Modal Delete Confirmation -->
+            <div id="deleteModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Bạn có muốn xóa không?</h2>
+                    <button class="btnxoa">Xóa</button>
+                    <button type="button" class="close-btn">Thoát</button>
+                </div>
+            </div>
+            <!--end model edit and delete -->
+            <!-- model newitem -->
+            <div id="addForm" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Thêm Mới Địa Điểm</h2>
+                    <form>
+                        Tên địa điểm: <input type="text" id="category" placeholder="Tên địa điểm"><br><br>
+                        Nội dung: <textarea id="content" placeholder="Nội dung"></textarea><br><br>
+                        Hình ảnh:
+                        Giá: <input type="text" id="price" placeholder="VNĐ"><br><br>
+                        <input type="file" id="image"><br><br>
+
+
+                        <button type="submit" class="btnluu">Thêm mới</button>
+                        <!-- <button type="button" class="close-btn">Thoát</button> -->
+                    </form>
+
+                </div>
+            </div>
+            <!-- end new item -->
+            <div class="bottom-data">
+
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Danh Sách Tour Du Lịch</h3>
+                        <i class='bx bx-filter'></i>
+                        <button class="btn add-new-btn ">
+                            Thêm tour
+                        </button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên Địa điểm</th>
+                                <th>Nội dung</th>
+                                <th>Hình ảnh</th>
+                                <th>Giá</th>
+                                <th>Trạng thái</th>
+                                <th>Hoạt động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Du Lịch Đà Nẵng</td>
+                                <td id="noidungTour">Du Lịch Miền Trung địa điểm TP Đà Nãng 
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                </td>
+                                <td>
+                                    920.000 VND
+                                </td>
+
+                                <td>
+                                    <label class="switch active">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="btn edit-btn">
+                                        <i class="bx bx-edit"></i>
+                                    </button>
+
+                                    <button class="btn delete-btn">
+                                        <i class="bx bx-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Du Lịch Đà Nẵng</td>
+                                <td id="noidungTour">Du Lịch Miền Trung địa điểm TP Đà Nãng 
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                </td>
+                                <td>
+                                    920.000 VND
+                                </td>
+
+                                <td>
+                                    <label class="switch active">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="btn edit-btn">
+                                        <i class="bx bx-edit"></i>
+                                    </button>
+
+                                    <button class="btn delete-btn">
+                                        <i class="bx bx-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Du Lịch Đà Nẵng</td>
+                                <td id="noidungTour">Du Lịch Miền Trung địa điểm TP Đà Nãng 
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                </td>
+                                <td>
+                                    920.000 VND
+                                </td>
+
+                                <td>
+                                    <label class="switch ">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <button class="btn edit-btn">
+                                        <i class="bx bx-edit"></i>
+                                    </button>
+
+                                    <button class="btn delete-btn">
+                                        <i class="bx bx-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
