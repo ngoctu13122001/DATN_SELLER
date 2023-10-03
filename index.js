@@ -1,4 +1,4 @@
-const sideLinks = document.querySelectorAll('.sidebar .side-menu li a:not(.logout)');
+const sideLinks = document.querySelectorAll('.sidebar-seller .side-menu-seller li a:not(.logout)');
 
 sideLinks.forEach(item => {
     const li = item.parentElement;
@@ -10,16 +10,16 @@ sideLinks.forEach(item => {
     })
 });
 
-const menuBar = document.querySelector('.content nav .bx.bx-menu');
-const sideBar = document.querySelector('.sidebar');
+const menuBar = document.querySelector('.content-seller nav .bx.bx-menu');
+const sideBar = document.querySelector('.sidebar-seller');
 
 menuBar.addEventListener('click', () => {
     sideBar.classList.toggle('close');
 });
 
-const searchBtn = document.querySelector('.content nav form .form-input button');
-const searchBtnIcon = document.querySelector('.content nav form .form-input button .bx');
-const searchForm = document.querySelector('.content nav form');
+const searchBtn = document.querySelector('.content-seller nav form .form-input button');
+const searchBtnIcon = document.querySelector('.content-seller nav form .form-input button .bx');
+const searchForm = document.querySelector('.content-seller nav form');
 
 // account
 const switches = document.querySelectorAll('.switch');
@@ -61,10 +61,9 @@ switches.forEach(switchEl => {
  const closeBtns = document.querySelectorAll('.close-btn');
  
  // Show the edit form when the edit button is clicked
- editBtn.addEventListener('click', function() {
-     editForm.style.display = 'block';
- });
- 
+ editBtn.onclick = function() {
+    editForm.style.display = 'block';
+};
  // Show the delete confirmation modal when the delete button is clicked
  deleteBtn.addEventListener('click', function() {
      deleteModal.style.display = 'block';
@@ -107,24 +106,24 @@ window.addEventListener('click', function(event) {
 
 //modal xem chi tiết
 // Lấy modal và nút xem
-const ChitietForm = document.getElementById('ChitietForm');
-const XemchitietBtn = document.querySelector('.btn-chitiet');
+const xemForm = document.getElementById('chitietForm');
+const xemchitietBtn = document.querySelector('.xem-btn');
 
 // Lấy nút đóng trong modal
-const dongBtn = ChitietForm.querySelector('.dong-btn');
+const dongBtn = xemForm.querySelector('.close-btn');
 
 // Hiện form xem chi tiết  khi nhấp vào nút Xem
-XemchitietBtn.addEventListener('click', function() {
-    ChitietForm.style.display = 'block';
-});
+xemchitietBtn.onclick = function() {
+    xemForm.style.display = 'block';
+};
 // Đóng form khi nhấp vào nút đóng
 dongBtn.addEventListener('click', function() {
-    ChitietForm.style.display = 'none';
+    xemForm.style.display = 'none';
 });
 
 // (Tùy chọn) Đóng form khi nhấp ra ngoài form
 window.addEventListener('click', function(event) {
-    if (event.target == ChitietForm) {
-        ChitietForm.style.display = 'none';
+    if (event.target == chitietForm) {
+        chitietForm.style.display = 'none';
     }
 });

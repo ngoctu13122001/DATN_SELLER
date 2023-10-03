@@ -10,12 +10,12 @@
 </head>
 <body>
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar-seller">
         <a href="index.html" class="logo">
             <i class='bx bxl-graphql'></i>
             <div class="logo-name"><span>SEL</span>LER</div>
         </a>
-        <ul class="side-menu">
+        <ul class="side-menu-seller">
             <li class="active"><a href="index.html" class="title_sidemenu"><i class='bx bxs-dashboard'></i>Trang Chủ</a>
             </li>
             <li><a href="tour_manage.html" class="title_sidemenu"><i class='bx bx-map-pin'></i>Quản Lý Tour Du Lịch</a>
@@ -31,7 +31,7 @@
             <li><a href="statistical.html" class="title_sidemenu"><i class='bx bx-bar-chart-alt-2'></i>Thống Kê</a></li>
 
         </ul>
-        <ul class="side-menu">
+        <ul class="side-menu-seller">
             <li>
                 <a href="#" class="logout">
                     <i class='bx bx-log-out-circle'></i>
@@ -43,7 +43,7 @@
     <!-- End Sidebar -->
 
     <!-- Main Content -->
-    <div class="content">
+    <div class="content-seller">
         <!-- Navbar thanh điều hướng -->
         <nav>
             <i class='bx bx-menu'></i>
@@ -56,7 +56,7 @@
         <!-- End of Navbar thanh điều hướng -->
 
         <main>
-            <div class="header">
+            <div class="header-seller">
                 <div class="left">
                     <h1>Quản Lý Hóa Đơn</h1>
                     <ul class="breadcrumb">
@@ -70,11 +70,11 @@
             </div>
 
           
-             <!-- model newitem -->
-             <div id="ChitietForm" class="modal">
-                <div class="modal-content">
-                    <span class="dong-btn">&times;</span>
-                    <h2>Thêm Mới Địa Điểm</h2>
+             <!-- model xemitem -->
+            <div id="chitietForm" class="modal-seller">
+                <div class="modal-content-seller">
+                    <span class="close-btn">&times;</span>
+                    <h2>Chi Tiết Hóa Đơn</h2>
                     <form>
                         <h3>Thông tin người đặt</h3>
                         Họ và tên: <label type="text" id="name" name="name">Nguyễn Ngọc Tú </label><br><br>
@@ -93,7 +93,7 @@
                         Ghi chú: <label type="textarea" id="ghichu" name="ghichu">...</label> <br><br>
         
                         <!-- <button type="submit" class="btnluu">Thêm mới</button> -->
-                        <button type="button" class="dong-btn">Thoát</button>
+                        <button type="button" class="close-btn">Thoát</button>
                     </form>
 
                 </div>
@@ -103,10 +103,10 @@
             
     
             <!-- Form Edit -->
-            <div class="bottom-data">
+            <div class="bottom-data-seller">
 
-                <div class="orders">
-                    <div class="header">
+                <div class="orders-seller">
+                    <div class="header-seller">
                         <i class='bx bx-receipt'></i>
                         <h3>Danh sách hóa đơn</h3>
                 
@@ -148,7 +148,7 @@
                                     <span><i class='bx bx-loader'></i>Chờ xác nhận</span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-chitiet ">
+                                    <button class="btn xem-btn">
                                         Xem
                                     </button>
                                 </td>
@@ -186,7 +186,7 @@
                                     <span><i class='bx bx-loader'></i>Chờ xác nhận</span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-chitiet ">
+                                    <button class="btn xem-btn">
                                         Xem
                                     </button>
                                 </td>
