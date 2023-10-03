@@ -4,7 +4,7 @@
     --light: #f6f6f9;
     --primary: #1976D2;
     --light-primary: #CFE8FF;
-    --grey: #eee;
+    --grey: #e2dddd;
     --dark-grey: #AAAAAA;
     --dark: #363949;
     --danger: #D32F2F;
@@ -418,14 +418,16 @@ body{
 }
 
 .content main .bottom-data .orders table th{
-    padding-bottom: 12px;
-    font-size: 13px;
+    padding-bottom: 10px;
+    font-size: 15px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
 }
 
 .content main .bottom-data .orders table td{
-    padding: 16px 0;
+    padding: 15px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--grey);
 }
 /* 
 .content main .bottom-data .orders table tr td:first-child{
@@ -642,11 +644,12 @@ input:checked + .slider:before {
 }
 
 .edit-btn {
-    background-color: #FFC107;
+    background-color: #388E3C;
+    font-size: 14px;
 }
 
 .edit-btn:hover {
-    background-color: #cc9a06;
+    background-color: #8599f0;
 }
 
 .delete-btn {
@@ -654,9 +657,17 @@ input:checked + .slider:before {
 }
 
 .delete-btn:hover {
-    background-color: #b02a37;
+    background-color: #cc9a06;
 }
-
+.huy-btn {
+    margin-top: 5px;
+    background-color: #DC3545;
+    font-size: 13px;
+    width: 85px;
+}
+.huy-btn:hover {
+    background-color: #cc9a06;
+}
 .bx {
     margin-right: 8px;
 }
@@ -772,4 +783,57 @@ background-color: #45a049;
   overflow: hidden;
   text-overflow: ellipsis;
    
+}
+/* icon heart request_tour */
+.content main .bottom-data .orders table td .bxs-location-plus{
+    color: red;
+
+}
+/* icon đã kết thúc request_tour */
+.content main .bottom-data .orders table td .bx-time-five{
+    color: red;
+}
+
+.content main .bottom-data .orders table td .bx{
+font-size: 15px;
+}
+
+/* **** QUAN LY HÓA ĐƠN-BILL MANAGE **** */
+/* icon quan ly hoa don- bill manage */
+.content main .bottom-data .orders table td .datethanhtoantruoc{
+    color: red;
+}
+.content main .bottom-data .orders table td .bx-loader{
+    color: #007BFF;
+}
+/* nút xem chi tiết */
+.btn-chitiet {
+    background-color: transparent;
+    font-size: 14px;
+    color: black;
+    border: 1px solid #363949 ;
+    border-radius: 20%;
+}
+.btn-chitiet:hover{
+    background-color: #8599f0 ;
+}
+/* nút xác nhận */
+.btn-xacnhan{
+    background-color: #388E3C;
+    font-size: 14px;
+}
+.btn-xacnhan:hover{
+    background-color:#8599f0  ;
+}
+/* nút hủy đơn */
+.content main .bottom-data .orders table td .bx-x-circle{
+    font-size: 22px;
+}
+.btn-huydon{
+    background-color: transparent;
+    font-size: 14px;
+    color: black;
+}
+.btn-huydon:hover{
+    background-color: rgb(236, 106, 106);
 }

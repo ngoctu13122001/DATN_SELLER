@@ -103,3 +103,28 @@ window.addEventListener('click', function(event) {
         addForm.style.display = 'none';
     }
 });
+
+
+//modal xem chi tiết
+// Lấy modal và nút xem
+const ChitietForm = document.getElementById('ChitietForm');
+const XemchitietBtn = document.querySelector('.btn-chitiet');
+
+// Lấy nút đóng trong modal
+const dongBtn = ChitietForm.querySelector('.dong-btn');
+
+// Hiện form xem chi tiết  khi nhấp vào nút Xem
+XemchitietBtn.addEventListener('click', function() {
+    ChitietForm.style.display = 'block';
+});
+// Đóng form khi nhấp vào nút đóng
+dongBtn.addEventListener('click', function() {
+    ChitietForm.style.display = 'none';
+});
+
+// (Tùy chọn) Đóng form khi nhấp ra ngoài form
+window.addEventListener('click', function(event) {
+    if (event.target == ChitietForm) {
+        ChitietForm.style.display = 'none';
+    }
+});

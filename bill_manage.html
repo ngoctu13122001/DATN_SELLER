@@ -1,1 +1,218 @@
 <!-- Quản lý hóa đơn -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Seller</title>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html" class="logo">
+            <i class='bx bxl-graphql'></i>
+            <div class="logo-name"><span>SEL</span>LER</div>
+        </a>
+        <ul class="side-menu">
+            <li class="active"><a href="index.html" class="title_sidemenu"><i class='bx bxs-dashboard'></i>Trang Chủ</a>
+            </li>
+            <li><a href="tour_manage.html" class="title_sidemenu"><i class='bx bx-map-pin'></i>Quản Lý Tour Du Lịch</a>
+            </li>
+            <li><a href="schedule_manage.html" class="title_sidemenu"><i class='bx bx-location-plus'></i>Quản Lý Lịch Trình</a>
+            </li>
+            <li><a href="request_tour.html" class="title_sidemenu"><i class='bx bx-bell'></i>Yêu Cầu Đặt Tour</a>
+            </li>
+            <li><a href="bill_manage.html" class="title_sidemenu"><i class='bx bx-money'></i>Quản Lý Hóa Đơn</a>
+            </li>
+            <li><a href="chat_box.html" class="title_sidemenu"><i class='bx bx-chat'></i>Chat Box</a>
+            </li>
+            <li><a href="statistical.html" class="title_sidemenu"><i class='bx bx-bar-chart-alt-2'></i>Thống Kê</a></li>
+
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar thanh điều hướng -->
+        <nav>
+            <i class='bx bx-menu'></i>
+
+            <a href="#" class="profile">
+                <img src="images/admin.jpg">
+            </a>
+        </nav>
+
+        <!-- End of Navbar thanh điều hướng -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Quản Lý Hóa Đơn</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Seller
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Quản Lý Hóa Đơn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+          
+             <!-- model newitem -->
+             <div id="ChitietForm" class="modal">
+                <div class="modal-content">
+                    <span class="dong-btn">&times;</span>
+                    <h2>Thêm Mới Địa Điểm</h2>
+                    <form>
+                        <h3>Thông tin người đặt</h3>
+                        Họ và tên: <label type="text" id="name" name="name">Nguyễn Ngọc Tú </label><br><br>
+                        Email: <label type="text" id="email" name="email">nguyentu85242@gmai.com </label><br><br>
+                        Số điện thoại: <label type="text" id="phone" name="phone">0356918267 </label><br><br>
+        
+                        <h3>Thông tin tour</h3>
+                        Tour:<label type="text" id="tour" name="tour"> Tour du lịch Châu Âu </label><br><br>
+                        Ngày xuất phát: <label type="text" id="date" name="date">25/09/2023</label><br><br>
+                        Địa điểm: <label for="">Đà Nẵng</label> <br><br>
+        
+                        <h3>Chi tiết đặt tour</h3>
+                        Ngày đặt: 
+                        Số người:
+                        Tổng tiền: <label type="text" id="price" name="price" placeholder="VNĐ">20.000.000</label> <br><br>
+                        Ghi chú: <label type="textarea" id="ghichu" name="ghichu">...</label> <br><br>
+        
+                        <!-- <button type="submit" class="btnluu">Thêm mới</button> -->
+                        <button type="button" class="dong-btn">Thoát</button>
+                    </form>
+
+                </div>
+            </div>
+            <!-- end new item -->
+
+            
+    
+            <!-- Form Edit -->
+            <div class="bottom-data">
+
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Danh sách hóa đơn</h3>
+                
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Thông tin người đặt</th>
+                                <th>Thông tin tour </th>
+                                <th>Chi tiết đặt tour</th>
+                                <th>Tình trạng</th>
+                                <th>Chi tiết</th>
+                                <th>Hành động</th>
+                                <th>Hủy đơn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td id="noidungTour">
+                                    <i class='bx bx-user'></i> <span>Nguyễn Ngọc Tú</span> <br>
+                                    <i class='bx bx-envelope'></i> <span>nguyetu85242@gmail.com</span> <br>
+                                    <i class='bx bx-phone'></i> <span>0356918267</span> <br>
+                                </td>
+                                <td id="noidungTour">
+                                    <i class='bx bxs-heart'></i><span>Tour du lịch Châu Âu</span> <br>
+                                    <i class='bx bx-calendar-check'></i>Ngày xuất phát: <span>25/09/2021</span> <br>
+                                    <i class='bx bx-car'></i>Địa điểm: <span>Đà Nẵng</span>
+                                </td>
+                                <td>
+                                    Ngày đặt: <span>20/09/2023</span> <br>
+                                    Số người: <span>3</span> <br>
+                                    Tổng tiền: <span>20.000.000đ</span> <br>
+                                    Ghi chú: <span>...</span>
+                                </td>
+                                <td>
+                                    TT trước <span class="datethanhtoantruoc">24/09/2023</span> <br>
+                                    <span><i class='bx bx-loader'></i>Chờ xác nhận</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-chitiet ">
+                                        Xem
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-xacnhan">
+                                        Xác nhận
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-huydon">
+                                        <i class='bx bx-x-circle'></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td id="noidungTour">
+                                    <i class='bx bx-user'></i> <span>Nguyễn Phan Hồng Sơn</span> <br>
+                                    <i class='bx bx-envelope'></i> <span>sonne@gmail.com</span> <br>
+                                    <i class='bx bx-phone'></i> <span>099999999</span> <br>
+                                </td>
+                                <td id="noidungTour">
+                                    <i class='bx bxs-heart'></i><span>Tour du lịch Bangkok </span> <br>
+                                    <i class='bx bx-calendar-check'></i>Ngày xuất phát: <span>30/09/2021</span> <br>
+                                    <i class='bx bx-car'></i>Địa điểm: <span>TP HCM</span>
+                                </td>
+                                <td>
+                                    Ngày đặt: <span>28/09/2023</span> <br>
+                                    Số người: <span>2</span> <br>
+                                    Tổng tiền: <span>7.500.000đ</span> <br>
+                                    Ghi chú: <span>...</span>
+                                </td>
+                                <td>
+                                    TT trước <span class="datethanhtoantruoc">29/09/2023</span> <br>
+                                    <span><i class='bx bx-loader'></i>Chờ xác nhận</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-chitiet ">
+                                        Xem
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-xacnhan">
+                                        Xác nhận
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-huydon">
+                                        <i class='bx bx-x-circle'></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Thêm các dòng dữ liệu khác tương tự ở đây -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
